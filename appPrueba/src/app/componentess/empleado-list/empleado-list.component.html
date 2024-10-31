@@ -1,0 +1,21 @@
+<div class="col-md-4" *ngFor="let empleado of empleados">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            NUMERO DE EMPLEADO: {{empleado.numEmpleado}}
+            <button class="btn btn-danger " (click)="borrarEmpleado(empleado.numEmpleado)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>NOMBRE: {{empleado.nombre}}</p>
+            <p>APELLIDO PATERNO: {{empleado.paterno}}</p>
+            <p>APELLIDO MATERNO: {{empleado.materno}}</p>
+            <p>CELULAR: {{empleado.celular}}</p>
+            <p>CARGO: {{empleado.cargo}}</p>
+            <p>SEXO: {{empleado.sexo}}</p>
+            <a [routerLink]="['/empleados/actualizar', empleado.numEmpleado]" class="btn btn-info btn-block">
+                Editar Empleado
+            </a>
+        </div>
+    </div>
+</div>

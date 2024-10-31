@@ -1,0 +1,41 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="number" name="codigo" [(ngModel)]="producto.codigo" placeholder="Codigo: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="producto.nombre" placeholder="Nombre: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="number" name="precio" [(ngModel)]="producto.precio" placeholder="Precio: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="cantidad" [(ngModel)]="producto.cantidad" placeholder="Cantidad: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <textarea name="caracteristicas" [(ngModel)]="producto.caracteristicas" placeholder="Escribe las Caracteristicas: " rows="4" class="form-control"></textarea>
+                </div>
+                <div class="card-body">
+                    <input type="url" name="imagen" [(ngModel)]="producto.imagen" placeholder="Imagen: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-success" 
+                (click)="edit ? actualizaProducto() : addProducto()">
+                    Agregar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="producto.imagen == '' ? 'https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg' : producto.imagen" class="card-img-top">
+        <h3>CODIGO: {{producto.codigo == 0 ? 'Codigo del Producto' : producto.codigo }}</h3>
+        <P>NOMBRE: {{producto.nombre == '' ? 'Nombre' : producto.nombre }}</P>
+        <p>PRECIO: {{producto.precio == {} ? 'Precio' : producto.precio }}</p>
+        <p>CANTIDAD: {{producto.cantidad== 0 ? 'Cantidad' : producto.cantidad }}</p>
+        <p>CARACTERISTICAS: {{producto.caracteristicas == '' ? 'Descripcion' : producto.caracteristicas }}</p>
+    </div>
+</div>

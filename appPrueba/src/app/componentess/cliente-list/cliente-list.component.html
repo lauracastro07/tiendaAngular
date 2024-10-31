@@ -1,0 +1,23 @@
+<div class="col-md-4" *ngFor="let cliente of clientes">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            RFC: {{cliente.rfc}}
+            <button class="btn btn-danger " (click)="borrarCliente(cliente.rfc)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <img [src]="cliente.foto" width="200" height="180" alt="card-img-top">
+            <p>NOMBRE: {{cliente.nombre}}</p>
+            <p>APELLIDO PATERNO: {{cliente.paterno}}</p>
+            <p>APELLIDO MATERNO: {{cliente.materno}}</p>
+            <p>EDAD: {{cliente.edad}}</p>
+            <p>SEXO: {{cliente.sexo}}</p>
+            <p>CELULAR: {{cliente.celular}}</p>
+            <p>CODIGO DEL PRODUCTO ADQUIRIDO: {{cliente.codigo}}</p>
+            <a [routerLink]="['/clientes/actualizar', cliente.rfc]" class="btn btn-info btn-block">
+                Editar Cliente
+            </a>
+        </div>
+    </div>
+</div>

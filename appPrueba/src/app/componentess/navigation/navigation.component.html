@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <i class="fa-solid fa-shop"></i> Mercado</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cart-shopping"></i>Productos</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/productos">
+                <i class="fa-solid fa-clipboard-list fa-bounce" style="color: #da07d6;"></i> Lista Productos</a></li>
+              <li><a class="dropdown-item" routerLink="/productos/agregar">
+                <i class="fa-solid fa-cart-plus fa-bounce"></i> Agregar Productos</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa-solid fa-user"></i>Clientes</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/clientes">
+                <i class="fa-solid fa-elevator fa-bounce"></i> Lista Clientes</a></li>
+              <li><a class="dropdown-item" routerLink="/clientes/agregar">
+                <i class="fa-solid fa-person-circle-plus fa-bounce" style="color: #ec18db;"></i> Agregar Clientes</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cart-shopping"></i>Empleados</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/empleados">
+                <i class="fa-solid fa-clipboard-list fa-bounce" style="color: #da07d6;"></i> Lista Empleados</a></li>
+              <li><a class="dropdown-item" routerLink="/empleados/agregar">
+                <i class="fa-solid fa-cart-plus fa-bounce"></i> Agregar Empleados</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

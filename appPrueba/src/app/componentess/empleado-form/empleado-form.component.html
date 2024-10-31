@@ -1,0 +1,48 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="text" name="numEmpleado" [(ngModel)]="empleado.numEmpleado" placeholder="Numero de Empleado: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Nombre: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="paterno" [(ngModel)]="empleado.paterno" placeholder="Apellido Paterno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="materno" [(ngModel)]="empleado.materno" placeholder="Apellido Materno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="celular" [(ngModel)]="empleado.celular" placeholder="Telefono: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="cargo" [(ngModel)]="empleado.cargo" placeholder="Cargo: " class="form-control">
+                </div>
+                <div class="form-check">
+                    <p>Sexo:
+                        <input type="radio" name="sexo" [(ngModel)]="empleado.sexo" value="M"> Masculino
+                        <input type="radio" name="sexo" [(ngModel)]="empleado.sexo" value="F"> Femenino
+                      </p>
+                </div>
+                <button type="button" class="btn btn-success"
+                 (click)="edit ? actualizaEmpleado() : addEmpleado()">
+                    Accion
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>NUMERO DE EMPLEADO: {{empleado.numEmpleado == 0 ? 'Numero de Empleado' : empleado.numEmpleado }}</h3>
+        <p>NOMBRE: {{empleado.nombre == '' ? 'Nombre' : empleado.nombre }}</p>
+        <p>APELLIDO PATERNO: {{empleado.paterno == '' ? 'Apellido Paterno' : empleado.paterno }}</p>
+        <p>APELLIDO MATERNO:{{empleado.materno == '' ? 'Apellido Materno' : empleado.materno }}</p>
+        <p>CELULAR: {{empleado.celular == 0 ? 'Celular' : empleado.celular }}</p>
+        <p>CARGO: {{empleado.cargo == '' ? 'Cargo' : empleado.cargo }}</p>
+        <p>SEXO: {{empleado.sexo == '' ? 'F/M' : empleado.sexo }}</p>
+    </div>
+</div>
