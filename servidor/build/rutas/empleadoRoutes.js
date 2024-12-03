@@ -13,9 +13,9 @@ class EmpleadoRoutes {
     config() {
         this.router.get('/', empleadoController_1.default.lista);
         this.router.post('/', empleadoController_1.default.crear);
-        this.router.put('/:numEmpleado', empleadoController_1.default.actualiza);
-        this.router.delete('/:numEmpleado', empleadoController_1.default.borrar);
-        this.router.get('/:numEmpleado', empleadoController_1.default.buscar);
+        this.router.put('/:numempleado', empleadoController_1.default.actualiza);
+        this.router.delete('/:numempleado', empleadoController_1.default.borrar);
+        this.router.get('/:numempleado', empleadoController_1.default.buscar);
     }
 }
 const empleadoRoutes = new EmpleadoRoutes();

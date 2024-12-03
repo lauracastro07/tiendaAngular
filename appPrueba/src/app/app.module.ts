@@ -16,6 +16,12 @@ import { ProductoService } from './servicios/producto.service';
 import { ClienteService } from './servicios/cliente.service';
 import { EmpleadoService } from './servicios/empleado.service';
 import { FormsModule } from '@angular/forms';
+import { AudiclienteListComponent } from './componentess/audicliente-list/audicliente-list.component';
+import { AudiempleadoListComponent } from './componentess/audiempleado-list/audiempleado-list.component';
+import { AudiproductoListComponent } from './componentess/audiproducto-list/audiproducto-list.component';
+import { AudiclienteService } from './servicios/audicliente.service';
+import { AudiempleadoService } from './servicios/audiempleado.service';
+import { AudiproductoService } from './servicios/audiproducto.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     ClienteListComponent,
     EmpleadoFormComponent,
     EmpleadoListComponent,
-    InicioComponent
+    InicioComponent,
+    AudiclienteListComponent,
+    AudiempleadoListComponent,
+    AudiproductoListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +48,9 @@ import { FormsModule } from '@angular/forms';
     ProductoService,
     ClienteService,
     EmpleadoService,
+    AudiproductoService,
+    AudiclienteService,
+    AudiempleadoService,
     provideHttpClient(),
     provideClientHydration()
   ],

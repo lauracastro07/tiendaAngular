@@ -1,8 +1,8 @@
 <div class="col-md-4" *ngFor="let empleado of empleados">
     <div class="card text-center">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            NUMERO DE EMPLEADO: {{empleado.numEmpleado}}
-            <button class="btn btn-danger " (click)="borrarEmpleado(empleado.numEmpleado)">
+            NUMERO DE EMPLEADO: {{empleado.numempleado}}
+            <button class="btn btn-danger " (click)="borrarEmpleado(empleado.numempleado)">
                 <i class="far fa-trash-alt"></i>
             </button>
         </div>
@@ -13,7 +13,7 @@
             <p>CELULAR: {{empleado.celular}}</p>
             <p>CARGO: {{empleado.cargo}}</p>
             <p>SEXO: {{empleado.sexo}}</p>
-            <a [routerLink]="['/empleados/actualizar', empleado.numEmpleado]" class="btn btn-info btn-block">
+            <a [routerLink]="['/empleados/actualizar', empleado.numempleado]" class="btn btn-info btn-block">
                 Editar Empleado
             </a>
         </div>

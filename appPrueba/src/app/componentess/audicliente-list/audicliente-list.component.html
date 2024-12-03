@@ -1,0 +1,31 @@
+<div class="col-md-4" *ngFor="let audicliente of audiclientes">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            ID DE LA OPERACION: {{audicliente.id}}
+            <button class="btn btn-danger " (click)="borrarAudicliente(audicliente.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <img [src]="audicliente.fotoantigua" width="200" height="180" alt="card-img-top">
+            <p>NOMBRE ANTIGUO: {{audicliente.nombreantiguo}}</p>
+            <p>NOMBRE NUEVO: {{audicliente.nombrenuevo}}</p>
+            <p>APELLIDO PATERNO ANTIGUO: {{audicliente.paternoantiguo}}</p>
+            <p>APELLIDO PATERNO NUEVO: {{audicliente.paternonuevo}}</p>
+            <p>APELLIDO MATERNO ANTIGUO: {{audicliente.maternoantiguo}}</p>
+            <p>APELLIDO MATERNO NUEVO: {{audicliente.maternonuevo}}</p>
+            <p>EDAD ANTIGUA: {{audicliente.edadantiguo}}</p>
+            <p>EDAD NUEVO: {{audicliente.edadnuevo}}</p>
+            <p>SEXO ANTIGUO: {{audicliente.sexoantiguo}}</p>
+            <p>SEXO NUEVO: {{audicliente.sexonuevo}}</p>
+            <p>CELULAR ANTIGUO: {{audicliente.celularantiguo}}</p>
+            <p>CELULAR NUEVO: {{audicliente.celularnuevo}}</p>
+            <p>CODIGO DEL PRODUCTO ADQUIRIDO ANTIGUO: {{audicliente.codigoantiguo}}</p>
+            <p>CODIGO DEL PRODUCTO ADQUIRIDO NUEVO: {{audicliente.codigonuevo}}</p>
+            <p>USUARIO: {{audicliente.usuario}}</p>
+            <p>FECHA DE LA OPERACION: {{audicliente.fechamodificado}}</p>
+            <p>OPERACION QUE SE REALIZO: {{audicliente.accion}}</p>
+            <p>RFC DEL CLIENTE: {{audicliente.rfc}}</p>
+        </div>
+    </div>
+</div>

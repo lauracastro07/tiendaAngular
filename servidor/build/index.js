@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+const audiclienteRoutes_1 = __importDefault(require("./rutas/audiclienteRoutes"));
+const audiempleadoRoutes_1 = __importDefault(require("./rutas/audiempleadoRoutes"));
+const audiproductoRoutes_1 = __importDefault(require("./rutas/audiproductoRoutes"));
 const clienteRoutes_1 = __importDefault(require("./rutas/clienteRoutes"));
 const productoRoutes_1 = __importDefault(require("./rutas/productoRoutes"));
 const empleadoRoutes_1 = __importDefault(require("./rutas/empleadoRoutes"));
@@ -25,6 +28,9 @@ class Server {
     }
     rutas() {
         this.app.use(indexRoutes_1.default);
+        this.app.use('/app/audiclientes', audiclienteRoutes_1.default);
+        this.app.use('/app/audiempleados', audiempleadoRoutes_1.default);
+        this.app.use('/app/audiproductos', audiproductoRoutes_1.default);
         this.app.use('/app/clientes', clienteRoutes_1.default);
         this.app.use('/app/productos', productoRoutes_1.default);
         this.app.use('/app/empleados', empleadoRoutes_1.default);

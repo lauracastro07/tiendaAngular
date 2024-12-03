@@ -3,7 +3,7 @@
         <div class="card-body">
             <form>
                 <div class="card-body">
-                    <input type="text" name="numEmpleado" [(ngModel)]="empleado.numEmpleado" placeholder="Numero de Empleado: " class="form-control" autofocus>
+                    <input type="text" name="numEmpleado" [(ngModel)]="empleado.numempleado" placeholder="Numero de Empleado: " class="form-control" autofocus>
                 </div>
                 <div class="card-body">
                     <input type="text" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Nombre: " class="form-control">
@@ -37,7 +37,7 @@
 
 <div class="col-md-4">
     <div class="card card-body text-center">
-        <h3>NUMERO DE EMPLEADO: {{empleado.numEmpleado == 0 ? 'Numero de Empleado' : empleado.numEmpleado }}</h3>
+        <h3>NUMERO DE EMPLEADO: {{empleado.numempleado == 0 ? 'Numero de Empleado' : empleado.numempleado }}</h3>
         <p>NOMBRE: {{empleado.nombre == '' ? 'Nombre' : empleado.nombre }}</p>
         <p>APELLIDO PATERNO: {{empleado.paterno == '' ? 'Apellido Paterno' : empleado.paterno }}</p>
         <p>APELLIDO MATERNO:{{empleado.materno == '' ? 'Apellido Materno' : empleado.materno }}</p>

@@ -9,6 +9,10 @@ import { InicioComponent } from './componentess/inicio/inicio.component';
 import { ProductoFormComponent } from './componentess/producto-form/producto-form.component';
 import { ClienteFormComponent } from './componentess/cliente-form/cliente-form.component';
 import { EmpleadoFormComponent } from './componentess/empleado-form/empleado-form.component';
+import { AudiproductoListComponent } from './componentess/audiproducto-list/audiproducto-list.component';
+import { AudiclienteListComponent } from './componentess/audicliente-list/audicliente-list.component';
+import { AudiempleadoListComponent } from './componentess/audiempleado-list/audiempleado-list.component';
+
 const routes: Routes = [
   //creamos objetos
   //muestra lo que esta en el archivo producto-list.component.html
@@ -20,6 +24,33 @@ const routes: Routes = [
   {
     path: 'inicio',
     component: InicioComponent
+  },
+  {
+    path: '',
+    redirectTo: '/audiproductos',
+    pathMatch: 'full'
+  },
+  {
+    path: 'audiproductos',
+    component: AudiproductoListComponent
+  },
+  {
+    path: '',
+    redirectTo: '/audiclientes',
+    pathMatch: 'full'
+  },
+  {
+    path: 'audiclientes',
+    component: AudiclienteListComponent
+  },
+  {
+    path: '',
+    redirectTo: '/audiempleados',
+    pathMatch: 'full'
+  },
+  {
+    path: 'audiempleados',
+    component: AudiempleadoListComponent
   },
   {
     path: '',
@@ -69,7 +100,7 @@ const routes: Routes = [
     component: EmpleadoFormComponent
   },
   {
-    path: 'empleados/actualizar/:numEmpleado',
+    path: 'empleados/actualizar/:numempleado',
     component: EmpleadoFormComponent
   }
 ];

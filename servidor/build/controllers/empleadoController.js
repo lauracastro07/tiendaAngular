@@ -14,41 +14,76 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class EmpleadoController {
+    // Método para listar 
     lista(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const empleado = yield database_1.default.query('select * from empleado');
-            res.json(empleado);
+            try {
+                const empleados = yield database_1.default.query('SELECT * FROM empleado');
+                res.json(empleados.rows); // En PostgreSQL los resultados están en `rows`
+            }
+            catch (error) {
+                res.status(500).json({ message: 'Error al obtener empleado', error });
+            }
         });
     }
+    // Método para crear un nuevo 
     crear(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            //console.log(req.body); Mostrar en consola
-            yield database_1.default.query('insert into empleado set ?', [req.body]);
-            res.json({ message: 'Se guardo un empleado' });
+            try {
+                const { numempleado, nombre, paterno, materno, celular, cargo, sexo } = req.body;
+                const query = 'INSERT INTO empleado (numempleado, nombre, paterno, materno, celular, cargo, sexo) VALUES ($1, $2, $3, $4, $5, $6, $7)';
+                yield database_1.default.query(query, [numempleado, nombre, paterno, materno, celular, cargo, sexo]);
+                res.json({ message: 'Se guardó un empleado' });
+            }
+            catch (error) {
+                res.status(500).json({ message: 'Error al crear empleado', error });
+            }
         });
     }
+    // Método para actualizar 
     actualiza(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { numEmpleado } = req.params;
-            yield database_1.default.query('update empleado set ? where numEmpleado = ?', [req.body, numEmpleado]);
-            res.json({ message: 'Se modifico el empleado' });
+            try {
+                const { numempleado } = req.params;
+                const { nombre, paterno, materno, celular, cargo, sexo } = req.body;
+                const query = 'UPDATE empleado SET nombre = $1, paterno = $2, materno = $3, celular = $4, cargo = $5, sexo = $6 WHERE numempleado = $7';
+                yield database_1.default.query(query, [nombre, paterno, materno, celular, cargo, sexo, numempleado]);
+                res.json({ message: 'Se modificó el empleado' });
+            }
+            catch (error) {
+                res.status(500).json({ message: 'Error al actualizar empleado', error });
+            }
         });
     }
+    // Método para borrar
     borrar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { numEmpleado } = req.params;
-            yield database_1.default.query('delete from empleado where numEmpleado = ?', [numEmpleado]);
-            res.json({ message: 'Se elimino el empleado' });
+            try {
+                const { numempleado } = req.params;
+                const query = 'DELETE FROM empleado WHERE numempleado = $1';
+                yield database_1.default.query(query, [numempleado]);
+                res.json({ message: 'Se eliminó el empleado' });
+            }
+            catch (error) {
+                res.status(500).json({ message: 'Error al eliminar empleado', error });
+            }
         });
     }
+    // Método para buscar 
     buscar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { numEmpleado } = req.params;
-            const empleado = yield database_1.default.query('select * from empleado where numEmpleado = ?', [numEmpleado]);
-            if (empleado.length > 0) {
-                return res.json(empleado[0]);
+            try {
+                const { numempleado } = req.params;
+                const query = 'SELECT * FROM empleado WHERE numempleado = $1';
+                const empleado = yield database_1.default.query(query, [numempleado]);
+                if (empleado.rows.length > 0) {
+                    return res.json(empleado.rows[0]);
+                }
+                res.status(404).json({ message: 'No existe el empleado' });
             }
-            res.status(404).json({ message: 'no existe el empleado' });
+            catch (error) {
+                res.status(500).json({ message: 'Error al buscar empleado', error });
+            }
         });
     }
 }

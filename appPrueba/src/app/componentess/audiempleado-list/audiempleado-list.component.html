@@ -1,0 +1,29 @@
+<div class="col-md-4" *ngFor="let audiempleado of audiempleados">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+             ID DE LA OPERACION: {{audiempleado.id}}
+            <button class="btn btn-danger " (click)="borrarAudiempleado(audiempleado.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>NOMBRE ANTIGUO: {{audiempleado.nombreantiguo}}</p>
+            <p>NOMBRE NUEVO: {{audiempleado.nombrenuevo}}</p>
+            <p>APELLIDO PATERNO ANTIGUO: {{audiempleado.paternoantiguo}}</p>
+            <p>APELLIDO PATERNO NUEVO: {{audiempleado.paternonuevo}}</p>
+            <p>APELLIDO MATERNO ANTIGUO: {{audiempleado.maternoantiguo}}</p>
+            <p>APELLIDO MATERNO NUEVO: {{audiempleado.maternonuevo}}</p>
+            <p>CELULAR ANTIGUO: {{audiempleado.celularantiguo}}</p>
+            <p>CELULAR NUEVO: {{audiempleado.celularnuevo}}</p>
+            <p>CARGO ANTIGUO: {{audiempleado.cargoantiguo}}</p>
+            <p>CARGO NUEVO: {{audiempleado.cargonuevo}}</p>
+            <p>SEXO ANTIGUO: {{audiempleado.sexoantiguo}}</p>
+            <p>SEXO NUEVO: {{audiempleado.sexonuevo}}</p>
+            <p>USUARIO: {{audiempleado.usuario}}</p>
+            <p>FECHA DE LA OPERACION: {{audiempleado.fechamodificado}}</p>
+            <p>OPERACION QUE SE REALIZO: {{audiempleado.accion}}</p>
+            <p>NUMERO DEL EMPLEADO: {{audiempleado.numempleado}}</p>
+        </div>
+    </div>
+</div>
+

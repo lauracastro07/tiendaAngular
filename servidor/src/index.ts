@@ -2,8 +2,9 @@ import express, {Application} from 'express';
 
 import morgan from 'morgan';
 import cors from 'cors';
-
-
+import audiclienteRoutes from './rutas/audiclienteRoutes';
+import audiempleadoRoutes from './rutas/audiempleadoRoutes';
+import audiproductoRoutes from './rutas/audiproductoRoutes';
 import clienteRoutes from './rutas/clienteRoutes';
 import productoRoutes from './rutas/productoRoutes';
 import empleadoRoutes from './rutas/empleadoRoutes';
@@ -28,6 +29,9 @@ class Server{
 
     rutas(): void{
         this.app.use(indexRoutes);
+        this.app.use('/app/audiclientes', audiclienteRoutes);
+        this.app.use('/app/audiempleados', audiempleadoRoutes);
+        this.app.use('/app/audiproductos', audiproductoRoutes);
         this.app.use('/app/clientes', clienteRoutes);
         this.app.use('/app/productos', productoRoutes);
         this.app.use('/app/empleados', empleadoRoutes)

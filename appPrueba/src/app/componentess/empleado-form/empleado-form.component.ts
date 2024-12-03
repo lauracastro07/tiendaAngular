@@ -12,7 +12,7 @@ export class EmpleadoFormComponent implements OnInit{
 
   @HostBinding('class')classes = 'row';
   empleado: Empleado = {
-    numEmpleado: 0,
+    numempleado: 0,
     nombre: '', 
     paterno: '', 
     materno: '', 
@@ -28,8 +28,8 @@ export class EmpleadoFormComponent implements OnInit{
 
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
-    if(params ['numEmpleado']){
-      this.empleadoService.getEmpleado(params['numEmpleado']).subscribe(
+    if(params ['numempleado']){
+      this.empleadoService.getEmpleado(params['numempleado']).subscribe(
         res => {
           console.log(res);
           this.empleado = res;
@@ -53,7 +53,7 @@ export class EmpleadoFormComponent implements OnInit{
 
   actualizaEmpleado(){
     const params = this.activatedRoute.snapshot.params;
-    this.empleadoService.updateEmpleado(params['numEmpleado'], this.empleado).subscribe(
+    this.empleadoService.updateEmpleado(params['numempleado'], this.empleado).subscribe(
       res => {
         console.log(res);
         this.router.navigate(['/empleados']);

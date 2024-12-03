@@ -1,5 +1,5 @@
 export interface Empleado{
-    numEmpleado?: number;
+    numempleado?: number;
     nombre?: string;
     paterno?: string;
     materno?: string;

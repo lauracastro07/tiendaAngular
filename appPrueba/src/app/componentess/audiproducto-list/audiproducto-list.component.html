@@ -1,0 +1,26 @@
+<div class="col-md-4" *ngFor="let audiproducto of audiproductos">
+    <div class="card text-center" >
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            CODIGO: {{audiproducto.id}}
+            <button class="btn btn-danger" (click)="borrarAudiproducto(audiproducto.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        
+        <div class="card-body text-center">
+            <img [src]="audiproducto.imagenantiguo" width="300" height="230" alt="card-img-top">
+            <p>NOMBRE DEL PRODUCTO ANTIGUO:  {{audiproducto.nombreantiguo}}</p>
+            <p>NOMBRE DEL PRODUCTO NUEVO:  {{audiproducto.nombrenuevo}}</p>
+            <p>PRECIO ANTIGUO: {{audiproducto.precioantiguo}}</p>
+            <p>PRECIO NUEVO: {{audiproducto.precionuevo}}</p>
+            <p>CANTIDAD EN STOCK ANTIGUA: {{audiproducto.cantidadantiguo}}</p>
+            <p>CANTIDAD EN STOCK NUEVA: {{audiproducto.cantidadnuevo}}</p>
+            <p>CARACTERISTICAS ANTIGUAS: {{audiproducto.caracteristicasant}}</p>
+            <p>CARACTERISTICAS NUEVAS: {{audiproducto.caracteristicasnue}}</p>
+            <p>USUARIO: {{audiproducto.usuario}}</p>
+            <p>FECHA DE LA OPERACION: {{audiproducto.fechamodificado}}</p>
+            <p>OPERACION QUE SE REALIZO: {{audiproducto.accion}}</p>
+            <p>CODIGO DEL PRODUCTO: {{audiproducto.codigo}}</p>
+        </div>
+    </div>
+</div>

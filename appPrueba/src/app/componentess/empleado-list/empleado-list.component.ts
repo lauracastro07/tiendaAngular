@@ -24,8 +24,8 @@ export class EmpleadoListComponent implements OnInit {
     );
   }
 
-  borrarEmpleado(numEmpleado: string){
-    this.empleadoService.deleteEmpleado(numEmpleado).subscribe(
+  borrarEmpleado(numempleado: string){
+    this.empleadoService.deleteEmpleado(numempleado).subscribe(
       res => {
         console.log(res);
         this.obtenerEmpleados();

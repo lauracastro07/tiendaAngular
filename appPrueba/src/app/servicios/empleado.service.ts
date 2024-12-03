@@ -12,20 +12,20 @@ export class EmpleadoService {
     return this.http.get(`${this.API_URI}/empleados`);
   }
 
-  getEmpleado(numEmpleado: string){
-    return this.http.get(`${this.API_URI}/empleados/${numEmpleado}`);
+  getEmpleado(numempleado: string){
+    return this.http.get(`${this.API_URI}/empleados/${numempleado}`);
   }
 
   createEmpleado(empleado: Empleado){
     return this.http.post(`${this.API_URI}/empleados`,empleado);
   }
 
-  deleteEmpleado(numEmpleado: string){
-    return this.http.delete(`${this.API_URI}/empleados/${numEmpleado}`);
+  deleteEmpleado(numempleado: string){
+    return this.http.delete(`${this.API_URI}/empleados/${numempleado}`);
   }
 
-  updateEmpleado(numEmpleado: string, updateEmpleado: Empleado): Observable<Empleado>{
-    return this.http.put(`${this.API_URI}/empleados/${numEmpleado}`, updateEmpleado);
+  updateEmpleado(numempleado: string, updateEmpleado: Empleado): Observable<Empleado>{
+    return this.http.put(`${this.API_URI}/empleados/${numempleado}`, updateEmpleado);
   }
 
 }
